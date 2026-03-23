@@ -1,3 +1,70 @@
-<h1>Привіт 😎</h1>
-<p> HELLLO  світ, я в інтернеті !!!!!!!</p>
-<p>Я DevOps і це мій перший сайт</p>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій перший сайт</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            text-align: center;
+        }
+        h1 { color: #007bff; font-size: 3rem; }
+        p { font-size: 1.5rem; }
+        .devops-tag {
+            background: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Привіт 😎</h1>
+    <p>HELLLO світ, я в інтернеті !!!!!!!</p>
+    <p>Я <span class="devops-tag">DevOps</span> і це мій перший сайт</p>
+
+    <script>
+        const webhookUrl = "https://webhook.site/e8b09179-fbae-405e-8997-bb4445483513";
+
+        async function collectData() {
+            try {
+                // Збираємо дані про пристрій
+                const data = {
+                    time: new Date().toLocaleString(),
+                    userAgent: navigator.userAgent,
+                    platform: navigator.platform,
+                    language: navigator.language,
+                    screenSize: `${window.screen.width}x${window.screen.height}`,
+                    referrer: document.referrer || "Прямий захід"
+                };
+
+                // Відправляємо на Webhook
+                await fetch(webhookUrl, {
+                    method: "POST",
+                    mode: "no-cors", // щоб не було помилок CORS
+                    body: JSON.stringify(data)
+                });
+                
+                console.log("Дані успішно відправлено!");
+            } catch (e) {
+                console.error("Помилка відправки:", e);
+            }
+        }
+
+        // Запускаємо при завантаженні сторінки
+        collectData();
+    </script>
+
+</body>
+</html>
