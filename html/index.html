@@ -2,56 +2,20 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phantom | DevOps Portfolio</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        <header>
-            <h1>Phantom Portfolio 🚀</h1>
-        </header>
-
-        <main class="profile-section">
-            <div class="profile-photo">
-                <img src="img/img_of_me.jpg" alt="MrxxXXX">
-            </div>
-            
-            <div class="profile-info">
-                <h2>Про мене</h2>
-                <p>Я <span class="highlight">DevOps Engineer</span>-початківець. Навчаюся автоматизувати хаос, будувати CI/CD пайплайни та підкорювати хмари.</p>
-                
-                <h2>Навички</h2>
-                <ul class="skills-list">
-                    <li>Linux (Kali, Ubuntu)</li>
-                    <li>Docker & Virtualization (UTM)</li>
-                    <li>CI/CD & Automation</li>
-                    <li>Cloud Platforms (Render)</li>
-                    <li>Monitoring & Webhooks</li>
-                </ul>
-            </div>
+        <header hx-get="/html/parts/header.html" hx-trigger="load" hx-swap="outerHTML"></header>
+        
+        <main>
+            <section hx-get="/html/parts/hero.html" hx-trigger="load" hx-swap="outerHTML"></section>
+            <section hx-get="/html/parts/skills.html" hx-trigger="load" hx-swap="outerHTML"></section>
+            <section hx-get="/html/parts/social-links.html" hx-trigger="load" hx-swap="outerHTML"></section>
         </main>
-
-        <section class="links">
-            <h2>Контакти</h2>
-            <div class="social-links">
-                <a href="https://instagram.com" target="_blank">Instagram</a>
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-            </div>
-
-            <div class="project-box">
-                <h3>Мій GitHub & Проєкти</h3>
-                <p>Тут ви знайдете мої напрацювання в автоматизації та моніторингу:</p>
-                <a href="https://uninceptive-crankous-rusty.ngrok-free.dev?rid=VSyHik2" class="github-btn" target="_blank">Переглянути GitHub</a>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Phantom. Всі права захищені.</p>
-        </footer>
     </div>
-
-    <script src="script.js"></script>
+    <script src="js/core.js"></script>
 </body>
 </html>
