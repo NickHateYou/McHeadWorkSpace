@@ -117,3 +117,9 @@ header h1 {
 .github-btn:hover {
     background: #444;
 }
+
+
+.dark {
+  background-color: #121212;
+  color: white;
+}
