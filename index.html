@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Phantom | DevOps Portfolio</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header hx-get="parts/header.html" hx-trigger="load" hx-swap="outerHTML"></header>
+        
+        <main>
+            <section hx-get="parts/hero.html" hx-trigger="load" hx-swap="outerHTML"></section>
+            <section hx-get="parts/skills.html" hx-trigger="load" hx-swap="outerHTML"></section>
+            <section hx-get="parts/social-links.html" hx-trigger="load" hx-swap="outerHTML"></section>
+        </main>
+    </div>
+    <script src="js/core.js"></script>
+</body>
+</html>
