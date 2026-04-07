@@ -23,4 +23,31 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('dark');
     });
   }
+
+  // 🧾 FORM
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+
+  if (form && status) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        status.textContent = 'Please fill all fields';
+        return;
+      }
+
+      if (!email.includes('@')) {
+        status.textContent = 'Invalid email';
+        return;
+      }
+
+      status.textContent = 'Message sent!';
+      form.reset();
+    });
+  }
 });
