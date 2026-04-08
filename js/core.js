@@ -23,31 +23,29 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('dark');
     });
   }
+});
 
-  // 🧾 FORM VALIDATION
-  const form = document.getElementById('contactForm');
-  const status = document.getElementById('formStatus');
+// 🧾 FORM VALIDATION (краще винести назовні)
+document.body.addEventListener('submit', (e) => {
+  if (e.target && e.target.id === 'contactForm') {
+    e.preventDefault();
 
-  if (form && status) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    const status = document.getElementById('formStatus');
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
+    if (!name || !email || !message) {
+      status.textContent = 'Please fill all fields';
+      return;
+    }
 
-      if (!name || !email || !message) {
-        status.textContent = 'Please fill all fields';
-        return;
-      }
+    if (!email.includes('@')) {
+      status.textContent = 'Invalid email';
+      return;
+    }
 
-      if (!email.includes('@')) {
-        status.textContent = 'Invalid email';
-        return;
-      }
-
-      status.textContent = 'Message sent!';
-      form.reset();
-    });
+    status.textContent = 'Message sent!';
+    e.target.reset();
   }
 });
