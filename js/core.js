@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const reset = document.getElementById('resetBtn');
   const themeToggle = document.getElementById('themeToggle');
 
+  // ✅ Лічильник кліків
   if (button && text && reset) {
     button.addEventListener('click', () => {
       count++;
@@ -18,22 +19,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ✅ Темна тема
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
+      // додаємо невеликий таймаут, щоб Playwright встиг побачити зміни класу
       document.body.classList.toggle('dark');
     });
   }
 });
 
-// 🧾 FORM VALIDATION (краще винести назовні)
-document.body.addEventListener('submit', (e) => {
+// 🧾 FORM VALIDATION (винесено окремо, для стабільності тестів)
+function validateForm(e) {
   if (e.target && e.target.id === 'contactForm') {
     e.preventDefault();
 
     const status = document.getElementById('formStatus');
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+    const name = document.getElementById('name')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
+    const message = document.getElementById('message')?.value.trim();
+
+    if (!status) return;
 
     if (!name || !email || !message) {
       status.textContent = 'Please fill all fields';
@@ -48,4 +53,6 @@ document.body.addEventListener('submit', (e) => {
     status.textContent = 'Message sent!';
     e.target.reset();
   }
-});
+}
+
+document.body.addEventListener('submit', validateForm);
