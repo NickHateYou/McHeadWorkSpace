@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 🧾 FORM
+  // 🧾 FORM VALIDATION
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
 
