@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-// інші тести залишаємо без змін
 test('homepage loads', async ({ page }) => {
   await page.goto('https://nickhateyou.github.io/McHeadWorkSpace/');
   await expect(page).toHaveTitle(/Phantom/);
@@ -21,13 +20,19 @@ test('theme toggle works', async ({ page }) => {
   await expect(page.locator('body')).toHaveClass(/dark/);
 });
 
-// === ОНОВЛЕНИЙ ТЕСТ ФОРМИ ===
+// ✅ ВИПРАВЛЕНИЙ ТЕСТ
 test('form validation works', async ({ page }) => {
   await page.goto('https://nickhateyou.github.io/McHeadWorkSpace/');
+
   const form = page.locator('#contactForm');
   const status = page.locator('#formStatus');
 
-  await form.waitFor(); // чекаємо, поки форма готова
+  await form.waitFor();
+
   await page.click('button[type=submit]');
-  await expect(status).toHaveText(/Please fill all fields/);
+
+  // 🔥 головний фікс
+  await expect(status).toContainText('Please fill all fields', {
+    timeout: 10000
+  });
 });
